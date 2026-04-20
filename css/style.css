@@ -1,0 +1,611 @@
+.rev-slidebg {
+  background-color: #000; /* or match your video’s dominant color */
+}
+/* Resize and pad the logo in the header */
+.header-section .logo img {
+  width: 120px;        /* make it smaller (default might be around 180–200px) */
+  height: auto;        /* keep aspect ratio */
+  margin-left: 20%; 
+      /* top & bottom space */
+}
+
+/* Optional: add left/right spacing if logo sticks to edge */
+.header-section .logo {
+  padding-left: 10px;
+  margin-left: 20%;
+  padding-right: 10px;
+  margin-right: 20%;
+}
+
+/* On mobile, make it even smaller */
+@media (max-width: 768px) {
+  .header-section .logo img {
+    width: 90px;
+    padding: 6px 0;
+  }
+}
+
+
+
+/* Hide Revolution Slider navigation arrows */
+.rev_slider .tp-leftarrow,
+.rev_slider .tp-rightarrow {
+  display: none !important;
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  padding: 20px 40px;
+  overflow: visible;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2a3f7c;
+  background: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #2a3f7c;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Speaker cards styling */
+.card-box {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-box img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card_content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* Add left spacing only to navbar links area */
+.navbar-nav {
+  margin-left: 40px;  /* push menu a bit right */
+}
+
+/* Tweak spacing for large screens only */
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-left: 60px;
+  }
+}
+
+
+
+
+                           /*     <!-- Our Story -->*/
+/* ========== YDA Our Story Section ========== */
+.about-section {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.about-section .section-title {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* FIXED GRID */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* make text + images equal height */
+.about-section .row.align-items-stretch {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Smooth hover animation for image grid items */
+.image-grid img {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-origin: center;
+}
+
+/* Top/bottom spacing for the image column */
+.about-images-col {
+  margin: 30px 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-section {
+    text-align: center;
+  }
+  .about-section .section-title {
+    font-size: 30px;
+  }
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+/* Mobile top margin for h2 section title */
+@media (max-width: 768px) {
+  .section-title-yt {
+    margin-top: 30px;
+  }
+}
+
+
+
+
+                           /*     <!-- Poster section -->*/
+
+ .poster-section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.poster-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+
+  filter: brightness(0.9);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transform-origin: center;
+}
+
+.poster-img:hover {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+.poster-overlay {
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 🎯 Custom Button Styling — Override Bootstrap */
+.poster-btn {
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  border-radius: 30px !important;
+  background-color: #fff !important;       /* override Bootstrap */
+  color: #000 !important;                  /* override Bootstrap */
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* 🟡 Hover Animation */
+.poster-btn:hover {
+  background-color: rgba(252, 203, 6) !important; /* YDA Yellow */
+  color: #fff !important;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(252, 203, 6, 0.4);
+}
+
+
+.apply-now-btn{
+  border-radius: 30px !important;
+}
+
+
+
+                           /*     <!-- Youtube Heading underline section -->*/
+.section-title-yt {
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(252, 203, 6);
+  display: inline-block;
+}
+
+
+
+
+                           /*     <!-- Past event section -->*/
+.event-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Anchor wrapping event cards should not affect look */
+.event-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Zoom-up hover for past event card images */
+.event-card .event-image {
+  overflow: hidden;
+}
+.event-card .event-image img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transform-origin: center;
+}
+.event-card:hover .event-image img {
+  transform: scale(1.06);
+  filter: brightness(1.02);
+}
+
+
+
+.event-content {
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* make content area a column so we can push meta to the bottom */
+  min-height: 120px;
+}
+
+.event-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a3f7c;
+  margin-bottom: 10px;
+}
+
+.event-meta {
+  font-size: 14px;
+  color: #333;
+  /* place date + location on a single row */
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto; /* push meta row to the bottom of the card */
+}
+
+.event-meta .meta-item{
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+}
+
+.event-meta i{
+  width: 18px;
+  min-width: 18px; /* keep icons aligned */
+  text-align: center;
+  color: #2a3f7c;
+}
+
+.event-meta .meta-text{
+  line-height: 1;
+  display: inline-block;
+}
+
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.owl-nav i {
+  pointer-events: all;
+  background: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.owl-nav i:hover {
+  background: #f0f0f0;
+}
+
+
+
+
+                           /*     <!-- Mission Section -->*/
+
+ .heading-underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.heading-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 3px;
+  background-color: rgb(252, 203, 6);
+}
+
+
+
+.organization-c{
+  padding-right: 30px;
+}
+
+.oh1{
+  font-weight: 700;
+}
+.oh3{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.font-icon{
+  height: 60px;
+  width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Section wrapper */
+.partner-section {
+  margin: -10px auto;
+  padding: 20px 10px;
+}
+
+/* Column styling */
+.partner-col {
+  padding: 20px 30px;
+}
+
+/* Divider only on md and above */
+@media (min-width: 992px) {
+  .partner-section .left-col {
+    border-right: 2px solid #e7d31d;
+  }
+}
+
+/* Titles */
+.partner-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.partner-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Lists */
+.partner-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.partner-list li {  
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+/* Bold tick marks */
+.partner-list li strong {
+  color: #facc15; /* gold accent */
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+
+
+
+                        /*css button for apply now*/
+
+.super-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #0f0f0f, #1c1c1c);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.super-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+  animation: rotate 4s linear infinite;
+  z-index: -2;
+}
+
+.super-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #0a0a0a;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.super-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.super-button:hover .arrow {
+  transform: translateX(6px);
+}
+
+.arrow {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease-in-out;
+  color: #00ffff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

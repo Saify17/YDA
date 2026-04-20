@@ -1,0 +1,308 @@
+
+
+/* ## Hero Section */
+
+
+.hero {
+  display: grid;
+  position: relative;
+  grid-template-columns: 100vw;
+  grid-template-rows: 70vh; /* height preserved */
+  place-items: center;
+  overflow: hidden;
+  animation: clip-hero-anim 1.25s cubic-bezier(0.29, 0.8, 0.8, 0.98);
+  will-change: clip-path;
+}
+
+.hero__bg,
+.hero__cnt {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: center;
+}
+
+/* Background */
+.hero__bg {
+  display: grid;
+  position: relative;
+  z-index: 0;
+  place-items: center;
+  animation: fade-in 0.75s linear;
+  will-change: opacity;
+}
+
+.hero__bg picture {
+  display: flex;
+  height: 100vh;          /* keep original picture height */
+  width: 100vw;
+  animation: scaling-hero-anim 4s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97) forwards;
+  will-change: transform;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top; /* crop more bottom, less top */
+}
+
+                                /* Overlay removed for vibrancy */
+.hero__bg::before {
+  display: none;
+}
+
+/* Hero Content */
+.hero__cnt {
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-in 0.75s 1.5s linear forwards;
+}
+
+.hero__cnt h1 {
+  margin-bottom: 0;
+}
+
+.hero__cnt svg {
+  height: 12vw;
+}
+
+.hero__cnt svg path {
+  fill: #fff;
+}
+
+                                        /* ## Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaling-hero-anim {
+  from { transform: scale(1.65); }
+  to   { transform: scale(1.1); }
+}
+
+@keyframes clip-hero-anim {
+  from { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+  to   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+}
+
+                                    /* ## Hero Hover effect */
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 1.5s ease; /* slower transition */
+}
+
+.hero:hover .hero__bg img {
+  transform: scale(1.10); /* subtle zoom */
+}
+
+
+                                        /* Mobile respon */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-rows: 50vh; /* smaller hero height on mobile */
+  }
+
+  .hero__cnt {
+    font-size: 5vw; /* scale text for readability */
+  }
+
+  .hero__cnt svg {
+    height: 20vw; /* adjust SVG size for smaller screens */
+  }
+}
+
+
+                                /* Teams Section */
+.team-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.team-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.team-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.team-role {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+
+/* Team Section (Bootstrap 3.3.6 compatible) */
+.team-card {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  margin-bottom: 30px;
+}
+
+.team-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 1.5s ease; /* smooth zoom */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2rem 3rem rgba(0,0,0,0.25);
+}
+
+.team-card:hover img {
+  transform: scale(1.1); /* zoom image on hover */
+}
+
+/* Overlay content */
+.team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.team-card:hover .team-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Heading styles */
+.team-heading {
+  position: relative;
+  display: inline-block;
+  font-weight: 750;
+}
+
+.team-heading::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 5px;
+  background: #e2b441;
+  margin: 0.5rem auto 0;
+  border-radius: 10px;
+  animation: underline-grow 1.5s ease forwards;
+  margin-top: 10px;
+}
+
+@keyframes underline-grow {
+  from { width: 0; opacity: 0; }
+  to   { width: 60%; opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .team-card {
+    margin-bottom: 2rem;
+  }
+  .team-heading {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+                                            /* Overlay content */
+.team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4)); /* darker overlay */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.team-card:hover .team-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Team name (now h3) */
+.team-name {
+  font-size: 2rem;   /* larger for prominence */
+  font-weight: 700;
+  color: #fff;         /* pure white */
+  margin-bottom: 0px;
+}
+
+/* Team role */
+.team-role {
+  font-size: 1rem;
+  color: #fff;         /* pure white */
+  opacity: 0.9;        /* slight softness */
+}
+
+
+
+
+
+
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center bottom; /* crop more bottom, less top */
+}
+
+
+
+
+
+/*Upxominf wcwnra in hero section"*/
+.hero--small {
+  grid-template-rows: 70vh; /* smaller height */
+}
+
+.hero--small .hero__bg picture {
+  height: 80vh; /* match hero height */
+}

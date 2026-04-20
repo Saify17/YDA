@@ -1,0 +1,115 @@
+/* Wrapper around the whole form inside the modal */
+.form-wrapper {
+    width: 100%;          /* Always stretch fully */
+    padding: 40px 20px;   /* Adds space around form content */
+}
+
+/* Styling for section headings (H2 titles) */
+.section-heading {
+    margin-top: 10px;     /* Space above heading */
+    margin-bottom: 25px;  /* Space below heading */
+    font-weight: bold;    /* Make headings bold */
+}
+
+/* Slightly thick labels */
+.form-group label {
+    font-weight: 600;     /* Semi-bold label text */
+}
+
+/* Allow textareas to resize only vertically */
+textarea {
+    resize: vertical;     /* No left-right resize, only up-down */
+}
+
+/* ----------------------------------------------------------- */
+/* FINAL MODAL WIDTH SETTINGS                                  */
+/* ----------------------------------------------------------- */
+.modal-dialog {
+    width: 100%;                  /* Full width modal wrapper */
+    max-width: 800px !important;  /* Max modal width */
+    margin: 30px auto;            /* Center modal + spacing */
+}
+
+/* ----------------------------------------------------------- */
+/* MAKE MODAL CONTENT FULL-WIDTH                               */
+/* ----------------------------------------------------------- */
+.modal-content {
+    width: 100%;     /* Stretch fully */
+    padding: 20px;   /* Inner padding */
+}
+
+/* ----------------------------------------------------------- */
+/* REMOVE DEFAULT BOOTSTRAP CONTAINER LIMITS                   */
+/* ----------------------------------------------------------- */
+.modal-content .container,
+.modal-content .container-fluid {
+    width: 100% !important;      /* Always full width */
+    max-width: 100% !important;  /* Remove Bootstrap limits */
+    padding-left: 0;             /* No side padding */
+    padding-right: 0;            /* No side padding */
+}
+
+/* ----------------------------------------------------------- */
+/* RESET ROW MARGINS FOR FULL-WIDTH COLUMNS                    */
+/* ----------------------------------------------------------- */
+.modal-content .row {
+    margin-left: 0;     /* Remove Bootstrap left offset */
+    margin-right: 0;    /* Remove Bootstrap right offset */
+}
+
+
+
+
+/*hover*/
+
+.form-control {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+
+
+
+                                /* Model css for drop down Menue*/
+
+/* Apply to all select elements */
+select.form-control,
+.custom-select {
+  height: auto;              /* Let height adjust to content */
+  padding: 5px 5.5px;        /* Comfortable padding */
+  font-size: 16px;           /* Ensure readable text */
+  line-height: normal;       /* Avoid vertical clipping */
+  appearance: none;          /* Reset browser styling if needed */
+  background-color: #fff;    /* Ensure dropdown is visible */
+  border: 1px solid #ccc;    /* Standard border */
+  border-radius: 4px;        /* Optional rounded corners */
+}
+
+/* Style dropdown options */
+select.form-control option,
+.custom-select option {
+  padding: 5px 5.5px;
+  font-size: 16px;
+  line-height: normal;
+}
+
+
+
+
+                        /*Upload cv*/
+.upload-cv{
+    height: auto;              /* Let height adjust to content */
+  padding: 5px 5.5px;        /* Comfortable padding */
+  font-size: 16px;           /* Ensure readable text */
+  line-height: normal;       /* Avoid vertical clipping */
+  
+}
+

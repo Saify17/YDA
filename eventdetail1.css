@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container-slider-gallery {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side — consolidated below with height */
+
+/* Thumbnail base opacity — consolidated below with full styles */
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.column {
+  float: left;
+  width: 9.09%;
+  height: 80px; /* Adjust this value to your desired thumbnail height */
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the fixed height without distortion */
+}
+
+
+
+
+                    /*full width container css */
+/* Outer container with side margins and 90% viewport height */
+.slider-wrapper-gallery {
+  width: auto;
+  max-width: 90%;
+  height: 80vh;
+  margin: 20px 100px; /* top/bottom 20px, left/right 100px */
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Ensure gallery fills the container */
+.container-slider-gallery {
+  width: 100%;
+  height: 100%;
+}
+
+/* Slides area takes remaining space above thumbnails */
+.mySlides {
+  height: calc(100% - 80px); /* subtract thumbnail row height */
+  animation: fadeIn 500ms ease;
+}
+
+/* Keep images covering their slide area without distortion */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  animation: zoomIn 2300ms ease;
+}
+
+/* Thumbnails row spans full width */
+.row {
+  width: 100%;
+}
+
+/* Thumbnails: hover polish */
+.demo {
+  border-radius: 8px;
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+}
+.demo:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Prev/Next buttons: smoother hover feedback */
+.prev,
+.next {
+  transition: background-color 200ms ease, transform 200ms ease, opacity 200ms ease;
+}
+.prev:hover,
+.next:hover {
+  transform: scale(1.06);
+}
+
+/* Simple fade and gentle zoom keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.06); }
+}
+    
+
+/* Content section above the gallery slider */
+.content-section { /* text block describing the event */
+  margin: 20px 100px; /* align with wrapper margins for visual consistency */
+  line-height: 1.7; /* improve readability for long paragraphs */
+  color: #222; /* dark, readable text color */
+}
+
+.content-section h1 { /* main heading styling */
+  margin: 0 0 16px 0; /* space below title */
+  font-size: 36px; /* prominent title size */
+  font-weight: 800; /* bold/extra-bold as in the reference */
+  font-family: 'poppins', sans-serif;
+  letter-spacing: 0.5px; /* subtle spacing for elegance */
+}
+
+.content-section p { /* paragraphs inside content section */
+  margin: 12px 0; /* consistent spacing between paragraphs */
+}
+
+/* --------------------------------------------- */
+/* Text reveal animations for content section     */
+/* CSS-only animations: no JavaScript required    */
+/* --------------------------------------------- */
+
+/* Keyframes: title fades in and slides down slightly */
+@keyframes titleFadeDown { /* heading entrance animation */
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyframes: paragraph fades in and slides up slightly */
+@keyframes textFadeUp { /* paragraph entrance animation */
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animations with staggered delays for a smooth sequence */
+.content-section h1 { /* initial state: hidden and slightly above */
+  opacity: 0; /* hidden until revealed */
+  transform: translateY(-10px); /* start a bit higher */
+  will-change: transform, opacity; /* hint for smoother animation */
+}
+
+.content-section p { /* initial state: hidden and slightly below */
+  opacity: 0; /* hidden until revealed */
+  transform: translateY(12px); /* start a bit lower */
+  will-change: transform, opacity; /* performance hint */
+}
+
+/* Stagger each paragraph for a natural flow */
+/* When the section gets the "reveal" class (via JS), play animations */
+.content-section.reveal h1 { /* animate heading on reveal */
+  animation: titleFadeDown 600ms ease-out both; /* plays once, retains final state */
+  animation-delay: 60ms; /* tiny delay to avoid flash on paint */
+}
+
+.content-section.reveal p { /* animate paragraphs on reveal */
+  animation: textFadeUp 700ms ease-out both; /* subtle reveal from below */
+}
+
+/* Stagger each paragraph for a natural flow when revealed */
+.content-section.reveal p:nth-of-type(1) { animation-delay: 140ms; }
+.content-section.reveal p:nth-of-type(2) { animation-delay: 280ms; }
+.content-section.reveal p:nth-of-type(3) { animation-delay: 420ms; }
+
+/* Optional micro-interaction: heading letter-spacing eases on hover */
+.content-section h1:hover { /* gentle emphasis on hover */
+  letter-spacing: 1px; /* slight expansion */
+  transition: letter-spacing 200ms ease; /* smooth hover animation */
+}
+
+/* Accessibility: respect user preference to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .content-section h1,
+  .content-section p {
+    animation: none; /* disable entrance animations */
+  }
+  .content-section.reveal h1,
+  .content-section.reveal p {
+    opacity: 1; /* show content without motion */
+    transform: none; /* no transform on reduced motion */
+  }
+}
+    
+
+/* Global typography */
+
+    
+

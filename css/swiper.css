@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f4f4;
+}
+
+/* Navigation arrows styling */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f0c149 !important; /* Dark golden color */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper {
+  width: 100%;
+  padding: 2em 0;
+  overflow: hidden;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(33.333% - 20px); /* Show 3 slides by default */
+}
+.card-box {
+  background: #fff;
+  border-radius: 1em;
+  border: 3px solid rgb(252, 203, 6);
+  box-shadow: 0 2em 2em rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: 280px;
+}
+.card-box:hover {
+  transform: translateY(-5px);
+}
+.card-box img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.card_content {
+  padding: 1.5em;
+  text-align: center;
+}
+.card_content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 1.5em;
+  text-align: center;
+}
+
+.card_title {
+  font-size: 1em;
+  color: #555;
+  margin-top: 8px;
+}
+
+.card_name {
+  font-size: 1.5em;
+  color: rgb(8, 8, 63);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.card_btn {
+  background: #e2b441;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  margin-top: 0.7em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.card_btn:hover {
+  background: #b8860b;
+}
+@media (max-width: 768px) {
+  .card-box {
+    width: 240px;
+  }
+}

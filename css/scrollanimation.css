@@ -1,0 +1,306 @@
+/* ===================================
+   Global Animation Classes
+   =================================== */
+
+/* Base Animation Classes */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scale-up {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s ease-out;
+}
+
+/* Animation triggers */
+.fade-in.visible,
+.slide-up.visible,
+.slide-in-left.visible,
+.slide-in-right.visible,
+.scale-up.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Delay utilities */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+/* ===================================
+   index.html Animations
+   =================================== */
+/* About Section - Our Story */
+.about-section .section-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-out; /* Faster animation */
+}
+
+.about-section .about-text p {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.35s ease-out; /* Faster animation */
+}
+
+.about-section .image-grid img {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.35s ease-out; /* Faster animation */
+}
+
+.about-section .section-title.visible,
+.about-section .about-text p.visible,
+.about-section .image-grid img.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* YouTube Section - A New Chapter in Youth Diplomacy */
+.about-section .section-title-yt {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-out; /* Faster animation */
+}
+
+.about-section .section-title-yt + p {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.35s ease-out; /* Faster animation */
+}
+
+.about-section .section-title-yt.visible,
+.about-section .section-title-yt + p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Past Events */
+.event-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.event-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mission Section */
+.organization-c {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.7s ease-out;
+}
+
+.organization-c.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.font-icon {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.font-icon.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heading-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.heading-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #facc15;
+    transition: width 0.6s ease-out;
+}
+
+.heading-underline.visible::after {
+    width: 100%;
+}
+
+/* Partner Section */
+.partner-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.partner-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scale-up {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s ease-out;
+}
+
+/* Animation triggers */
+.fade-in.visible,
+.slide-up.visible,
+.slide-in-left.visible,
+.slide-in-right.visible,
+.scale-up.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Delay utilities */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+/* ===================================
+   joinAsAmbassdor.html Animations
+   =================================== */
+/* Team Section */
+.team-section .team-heading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.team-section .team-heading.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Partner Section Content */
+.partner-section .partner-subtitle {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s ease-out;
+}
+
+.partner-section .partner-subtitle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partner-section .partner-list li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-out;
+}
+
+.partner-section .partner-list li.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================================
+   joinAsPartner.html Animations
+   =================================== */
+.partner-section .partner-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.partner-section .partner-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partner-section .benefit-item {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s ease-out;
+}
+
+.partner-section .benefit-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================
+   upcoming-events.html Animations
+   =================================== */
+/* Event Cards */
+.poster-section .poster-img {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: all 0.8s ease-out;
+}
+
+.poster-section .poster-img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===================================
+   Shared Button Animations
+   =================================== */
+.super-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.super-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Apply Now Button Animation */
+.poster-btn {
+    transition: all 0.3s ease;
+}
+
+.poster-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
